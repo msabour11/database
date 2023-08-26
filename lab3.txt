@@ -1,0 +1,16 @@
+1- insert into employee (DNO,SSN,SuperSSN,Fname,Lname,Bdate,Address,Gender,Salary) values(30,102672,112233,'Mohamed','abdo','1995-11-26','Assuit','Male',4000);
+
+2- insert into employee (DNO,SSN,Fname,Lname,Bdate,Address,Gender) values(30,102660,'Mohamed','alaa','1996-11-26','Assuit','Male');
+
+
+3- insert into  departments(Dname,Dnum,MGRSSN,MGRSatrtDate) values('DEptIT',100,112233,'2006-11-01');
+select * from departments;
+select * from employee;
+SET SQL_SAFE_UPDATES = 0;
+4- update employee set Salary=Salary*1.2;
+5- select SSN,Fname from employee where Salary *12>10000;
+
+6- select * from employee where DNO=30 and Salary between 1000 and 2000;
+-- select min(SSN) from employee;
+7- select * from departments where Dnum =(select DNO from employee where SSN =(select min(SSN) from employee));
+-- select * from departments;

@@ -1,0 +1,13 @@
+1-select Dname,Dnum,Fname from departments inner join employee on departments.MGRSSN=employee.SuperSSN;
+2-select Fname ,Pname from employee inner join works_for on employee.SSN=works_for.Essn inner join project on works_for.Pno=project.Pnumber order by Pname;
+3-select d.Dname,max(e.Salary),min(e.Salary),avg(e.Salary) from departments d inner join employee e on d.Dname=e.DNO
+group by Dname;
+4-select e.Fname from employee e  join departments d on e.SSN= d.MGRSSN  where e.SSN not in (select ESSN from dependent) ;
+5-select p.Pname ,sum(w.hours) from  project p inner join works_for w on w.Pno=p.Pnumber group by p.Pname;
+
+6-select emp.Fname from employee emp inner join employee sup on emp.SSN=sup.SuperSSN where sup.Fname='Kamel';
+
+
+7- CREATE VIEW depnames AS SELECT d.Dname, p.Pname FROM departments d inner JOIN
+    project p ON d.Dnum = p.Dnum;
+    
